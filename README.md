@@ -1,6 +1,6 @@
 # Accessible PDF Maker
 ## Weekly Status
-### Week of 09/27/2020
+### Week of 09/26/2020 - 10/02/2020
 **Things Done:**
 - Had the first meeting with the sponsor.
   - Obtained some info about current process to make accessible PDF :
@@ -31,7 +31,7 @@
 2. Research more on existing libraries/packages that could help decoding/making PDF files with accessible elements. If certain language/framework has some powerful packages already, this project will incline to use that in order to avoid re-inventing the wheel.
 3. Think about tech stack.
 
-### Week of 10/04/2020
+### Week of 10/03/2020 - 10/09/2020
 **Things Done:**
 - Finally got into CS Slack. -_-#
 - Did more research about PDF format:
@@ -50,7 +50,7 @@
 3. Need to discuss whether to make a web app (so we can use the existing npm packages which seems to be pretty helpful) or start with a local app programmed in C/C++/Python.
 
 
-### Week of 10/11/2020
+### Week of 10/10/2020 - 10/16/2020
 **Things Done:**
 - Had the second meeting with Dr. Short. Scheduled next meeting on two weeks from today.
 - Read some articles that contain helpful informations on the PDF accessibiltiy topic:
@@ -69,3 +69,18 @@
 1. Try those different libraries found to see if any of them is helpful. 
 2. Get the Ruby on Rail project from Tufts Code for Good up and running to see if there is anything we can build up upon.
 3. Begin research on if LaTeX source files will be needed in order to make an accessible PDF, and how to parse LaTeX if needed
+
+### Week of 10/17/2020 - 10/23/2020
+**Things Done:**
+- Investigated the different PDF libraries. We believe pdflib will suit our needs and are getting close to committing to a tech stack based on these findings
+- Did some preliminary research on the usefulness of LaTeX files in tagging a PDF. Short answer, we will probably need to use LaTeX source code to some degree. We might even be able to design a small LaTeX package to allow inserting tags and alt text in LaTeX
+  - http://www.tug.org/TUGboat/tb30-2/tb95moore.pdf
+- Assessed our risks and created a chart outlining the most prominent risks associated with our project.
+  
+** Difficulties and Failures:**
+- As with last week, it seems that people have tried to do what we need to do, with limited success. No industry-standard tool for creating tagged PDFs exists. Many failed or deprecated projects have been found in our research.
+- It is time-consuming to set up an environment to test a PDF library, and to write enough code to be satisfied with the functionality of the library. We did not test each library equally because of these issues, and it's possible we will use a library that isn't the best of our options.
+
+**Things Planned:**
+- Work on a project to show competency for the upcoming assignment. Create a presentation based on this display of competency.
+- Continue to research LaTeX source code and the possibility of user-provided metadata and alt text within the LaTeX source code.
