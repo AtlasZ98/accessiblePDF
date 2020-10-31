@@ -88,8 +88,7 @@
 ### Week of 10/24/2020 - 10/30/2020
 **Things Done:**
 - Met with Dr. Short and discussed the possibility of creating tagged PDFs by converting LaTeX -> HTML -> tagged PDF, since HTML is already in a tagged format.
-- Found the 'prince' software (https://www.princexml.com/), which can convert HTML to a tagged PDF. The free version
-- 
+- Found the 'prince' software (https://www.princexml.com/), which can convert HTML to a tagged PDF. The free version puts a watermark on the resulting PDF, but this can be avoided by buying a license for the software
   
 ** Difficulties and Failures:**
 - None of the libraries found have an API for adding tags to a PDF. These libraries are useful if we know what objects are needed to create a tag in the PDF format, but do not offer this themselves.
