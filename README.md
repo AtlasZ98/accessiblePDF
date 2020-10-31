@@ -84,3 +84,19 @@
 **Things Planned:**
 - Work on a project to show competency for the upcoming assignment. Create a presentation based on this display of competency.
 - Continue to research LaTeX source code and the possibility of user-provided metadata and alt text within the LaTeX source code.
+
+### Week of 10/24/2020 - 10/30/2020
+**Things Done:**
+- Met with Dr. Short and discussed the possibility of creating tagged PDFs by converting LaTeX -> HTML -> tagged PDF, since HTML is already in a tagged format.
+- Found the 'prince' software (https://www.princexml.com/), which can convert HTML to a tagged PDF. The free version
+- 
+  
+** Difficulties and Failures:**
+- None of the libraries found have an API for adding tags to a PDF. These libraries are useful if we know what objects are needed to create a tag in the PDF format, but do not offer this themselves.
+- There just aren't enough resources about how to tag a PDF online. It seems to require significant expertise in the PDF format to get creating tagged PDFs correct.
+- Dr. Short does not love our LaTeX -> HTML -> tagged PDF plan, since it has inconsistent effects on formatting. She has encouraged us to continue researching how to add tags to a PDF without using HTML
+
+**Things Planned:**
+- Reach out to the prince development team to ask for support. If prince has developed a method for creating a tagged PDF, they might be willing to share their knowledge of creating tagged PDFs to aide our work.
+- Touch base with Ming on if he knows any alumni who have done work on PDFs or are currently working on PDFs.
+- Complete New Competency Proficiency Demo
