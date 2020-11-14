@@ -119,7 +119,7 @@
 ### Week of 11/7/2020 - 11/14/2020
 **Things Done:**
 - Gotten a few responses from the Prince development team. Will continue to communicate with them and ask for help.
-- Met with Dr.Short and discussed the LaTeX -> HTML -> tagged PDF trials we ran previously, the Design Doc of our project, some alternative solutions (providing two resulting files, one tagged but with bad formatting for screen readers, one original untagged file for general users).
+- Met with Dr.Short and discussed the LaTeX -> HTML -> tagged PDF trials we ran previously, the Design Doc of our project, and some alternative solutions (providing two resulting files, one tagged but with bad formatting for screen readers, one original untagged file for general users).
 
 **Difficulties and Failures:**
 - Prince responded to us, but admitted that tagging PDFs directly is extremely hard and that they have failed before turning to the HTML middleground.
