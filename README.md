@@ -116,10 +116,10 @@
 - Begin thinking about our proof-of-concept demo for the end of the semester. Ideally, this will be based on a part of our project which will be needed regardless of whether we get support from Prince on tagging a PDF.
 
 
-### Week of 11/7/2020 - 11/14/2020
+### Week of 11/7/2020 - 11/13/2020
 **Things Done:**
 - Gotten a few responses from the Prince development team. Will continue to communicate with them and ask for help.
-- Met with Dr.Short and discussed the LaTeX -> HTML -> tagged PDF trials we ran previously, the Design Doc of our project, and some alternative solutions (providing two resulting files, one tagged but with bad formatting for screen readers, one original untagged file for general users).
+- Met with Dr.Short and discussed the LaTeX -> HTML -> tagged PDF trials we ran previously and some alternative solutions (providing two resulting files, one tagged but with bad formatting for screen readers, one original untagged file for general users).
 
 **Difficulties and Failures:**
 - Prince responded to us, but admitted that tagging PDFs directly is extremely hard and that they have failed before turning to the HTML middleground.
@@ -128,3 +128,13 @@
 **Things Planned:**
 - Continue to communicate with Prince and hopefully get them officially involved in the project (if necessary).
 - Think about time management. If we don't have enough time, we will go with the solution of generating two files to avoid formatting issues.
+
+
+### Week of 11/14/2020 - 11/20/2020
+**Things Done:**
+- Sent Dr.Short the Design Doc of our project and got feedback (brief compliment) from her.
+
+**Difficulties and Failures:**
+
+
+**Things Planned:**
