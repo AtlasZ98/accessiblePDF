@@ -132,9 +132,15 @@
 
 ### Week of 11/14/2020 - 11/20/2020
 **Things Done:**
-- Sent Dr.Short the Design Doc of our project and got feedback (brief compliment) from her.
+- Sent Dr.Short the Design Doc of our project and received feedback from her.
+- Found some useful tutorials on how to execute shell commands in NodeJS:
+  - https://stackabuse.com/executing-shell-commands-with-node-js/
+  - https://nodejs.org/api/child_process.html
 
 **Difficulties and Failures:**
-
+- The guy from Prince didn't reply to our questions during the past week. Hope he was just busy...
+- Not every person on the team is familiar with NodeJS and we need to figure out a way to automate the conversion on the server side rather than manually type the commands (like what we did in the proficiency demo)
 
 **Things Planned:**
+- Follow the tutorial to aumoate the two-stage converision through NodeJS script. Luckily I'm taking OS so the executing shell commands in NodeJS through child processes seems understandable.
+- Try implementing a simple server that does the two-stage conversion during Thanksgiving.
