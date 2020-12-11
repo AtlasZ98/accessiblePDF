@@ -144,3 +144,44 @@
 **Things Planned:**
 - Follow the tutorial to aumoate the two-stage converision through NodeJS script. Luckily I'm taking OS so the executing shell commands in NodeJS through child processes seems understandable.
 - Try implementing a simple server that does the two-stage conversion during Thanksgiving.
+
+### Final Status Report
+
+**Do you use source control?**
+Yes. this Github repository houses our code.
+
+**Can you make a build in one step?**
+No.
+
+**Do you make daily builds?**
+No.
+
+**Do you have a bug database?**
+No.
+
+**Do you fix bugs before writing new code?**
+Yes.
+
+**Do you have an up-to-date schedule?**
+No.
+
+**Do you have a spec?**
+No.
+
+**Do programmers have quiet working conditions?**
+Yes.
+
+**Do you use the best tools money can buy?**
+No. Limited (actually, nonexistent) funding.
+
+**Do you have testers?**
+We are our own testers
+
+**Do new candidates write code during their interview?**
+Yes. We have not had an interview where the candidate did not write code.
+
+**Do you do hallway usability testing?**
+No.
+
+We have a lot to add to this project next semester to better manage our code. Notably, a schedule and a spec will be very useful, once they exist. Also, organizing our bugs as we find them will help us minimize the risk of forgetting to fix an issue with our product.
+
