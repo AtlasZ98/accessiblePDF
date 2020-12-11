@@ -5,10 +5,10 @@ const { execSync } = require("child_process");
 
 const pandocOptions = ' -o ';
 const princeOptions = ' --pdf-profile=\"PDF/UA-1\" -o ';
-const LaTexPath = ' ./temp/main.tex ';
-const HTMLPath = ' ./temp/main.html ';
-const HTMLGlobalPath = __dirname + '/temp/main.html';
-const PDFPath = ' ./temp/output.pdf ';
+const LaTexPath = ' ./temp/result.tex ';
+const HTMLPath = ' ./temp/result.html ';
+const HTMLGlobalPath = __dirname + '/temp/result.html';
+const PDFPath = ' ./temp/result.pdf ';
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.post('/api/upload', (req, res, next) => {
 
     // saving the file
     form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/temp/' + file.name;
+        file.path = __dirname + '/temp/result.tex';
     });
 
     // upload finishes
@@ -46,10 +46,8 @@ app.post('/api/upload', (req, res, next) => {
         });
 
         fs.readFileSync(HTMLGlobalPath, 'utf8', (err, data) => {
-
             formatted = '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>' 
             + data + '</body></html>';
-          
             fs.writeFileSync(HTMLPath, formatted, 'utf8', function (err) {
                 if (err) return console.log(err);
             });
