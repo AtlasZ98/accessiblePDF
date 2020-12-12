@@ -175,7 +175,7 @@ Yes.
 No. Limited (actually, nonexistent) funding.
 
 **Do you have testers?**
-We are our own testers
+We are our own testers。
 
 **Do new candidates write code during their interview?**
 Yes. We have not had an interview where the candidate did not write code.
