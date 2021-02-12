@@ -190,9 +190,10 @@ We have a lot to add to this project next semester to better manage our code. No
 **Things Done:**
 - Had the first meeting with Dr. Short. 
   - Obtained some new links: 
-    - https://www.robobraille.org/
-    - https://pdfminersix.readthedocs.io/en/latest/
-    - https://www.adobe/com/content/dam/acom/en/devnet/pdf/pdfs/PDF32000_2008.pdf
+    
+    - existing online tool to do the convertion ==> https://www.robobraille.org/
+    - Python toolkit to extract PDF content ==> https://pdfminersix.readthedocs.io/en/latest/
+    - Official PDF standard specification ==> https://www.adobe/com/content/dam/acom/en/devnet/pdf/pdfs/PDF32000_2008.pdf
 
 **Difficulties and Failures:**
 - PDF standard specification is HUGE.
