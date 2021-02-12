@@ -185,3 +185,18 @@ No.
 
 We have a lot to add to this project next semester to better manage our code. Notably, a schedule and a spec will be very useful, once they exist. Also, organizing our bugs as we find them will help us minimize the risk of forgetting to fix an issue with our product.
 
+
+### Week of 02/08/2021 - 02/12/2021
+**Things Done:**
+- Had the first meeting with Dr. Short. 
+  - Obtained some new links: 
+    - https://www.robobraille.org/
+    - https://pdfminersix.readthedocs.io/en/latest/
+    - https://www.adobe/com/content/dam/acom/en/devnet/pdf/pdfs/PDF32000_2008.pdf
+
+**Difficulties and Failures:**
+- PDF standard specification is HUGE.
+
+**Things Planned:**
+- Resume communication with the Prince Guy on decoding PDF format.
+- Wait on Dr. Short's meeting with Adobe to see if there could be SDK available for tagging PDF files.
