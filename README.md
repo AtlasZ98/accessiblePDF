@@ -201,3 +201,17 @@ We have a lot to add to this project next semester to better manage our code. No
 **Things Planned:**
 - Resume communication with the Prince Guy on decoding PDF format.
 - Wait on Dr. Short's meeting with Adobe to see if there could be SDK available for tagging PDF files.
+
+
+### Week of 02/13/2021 - 02/19/2021
+**Things Done:**
+- Started reading and testing files and websites Dr. Short and we obtained during the break and our first meeting.
+- Finished updating our project requirements and semester plan.
+
+**Difficulties and Failures:**
+- Our sponsor, Dr. Short, did not get back to us about her meeting with Adobe. Might have to remind her next week.
+
+**Things Planned:**
+- See if we need to shift our focus to user interface and image tagging or stay to crack multiple-files-tagging issues.
+- Think of how to stand out among competitors and make our sponsor satisfied at the same time.
+- Finish reading all the new information and resources.
