@@ -215,3 +215,18 @@ We have a lot to add to this project next semester to better manage our code. No
 - See if we need to shift our focus to user interface and image tagging or stay to crack multiple-files-tagging issues.
 - Think of how to stand out among competitors and make our sponsor satisfied at the same time.
 - Finish reading all the new information and resources.
+
+### Week of 02/20/2021 - 02/26/2021
+**Things Done:**
+- Meeting with Dr. Short. Received update on her meeting with Adobe.
+- Tried RoboBraile which works very well.
+
+**Difficulties and Failures:**
+- RoboBraile seems to have our project's functionality but better. We need to change our plan to do something meaningful, like integrating their convertion tool to our web application which will have better front end built around producing PDFs.
+- Adobe documentation is not very readable. Adobe SDK APIs are not easy to use.
+- RoboBraile still doesn't handle math equations.
+
+**Things Planned:**
+- Explore the Adobe APIs for accessiblity.
+- Reach out to RoboBraile to see if they are willing to share their convertion method (code/tool) for acessible PDF.
+- Explore the possiblity to convert math equations.
