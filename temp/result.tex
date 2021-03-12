@@ -1,46 +1,34 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
+\documentclass[10pt]{article}
+\usepackage{mathpazo}
+\title{Latex Template}
+\date{}
 \begin{document}
+\maketitle
+\tableofcontents
+\section{First Section}
+\subsection{First Subsection}
+\subsubsection{First Subsubsection}
+\begin{itemize}
+    \item First bullet point has some easy math: $y = 2x + 1$
+    \item Second bullet point has some math: $f(x) = x^2+2x+1 = (x+1)^2$
+    \item A third bullet has some harder math: $\sum_{x=0}^{\inf} \frac{x^{n+1}}{5}$
+\end{itemize}
 
-\section*{Notes for My Paper}
+\newpage
 
-Don't forget to include examples of topicalization.
-They look like this:
+\section{Second Section}
+\subsection{On a New Page}
+\subsubsection{Another Subsubsection}
+\begin{enumerate}
+    \item Enumeration
+    \item More enumeration
+    \item A third time
+\end{enumerate}
 
-{\small
-\enumsentence{Topicalization from sentential subject:\\ 
-\shortex{7}{a John$_i$ [a & kltukl & [el & 
-  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
-{ & {\bf R-}clear & {\sc comp} & 
-  {\bf IR}.{\sc 3s}-love   & P & him & }
-{John, (it's) clear that Mary loves (him).}}
-}
+There's also a whole chunk of math here...
 
-\subsection*{How to handle topicalization}
+$$\lim_{x \rightarrow \inf} \frac{\pi (x)} {\frac{x}{\ln (x)}} = \frac{-b \pm \sqrt[3]{b^2-4ac}}{2a} \times \frac{2a}{-b \pm \sqrt[3]{b^2-4ac}}$$
 
-I'll just assume a tree structure like (\ex{1}).
-
-{\small
-\enumsentence{Structure of A$'$ Projections:\\ [2ex]
-\begin{tabular}[t]{cccc}
-    & \node{i}{CP}\\ [2ex]
-    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
-        &\node{iv}{C} & & \node{v}{SAgrP}
-\end{tabular}
-\nodeconnect{i}{ii}
-\nodeconnect{i}{iii}
-\nodeconnect{iii}{iv}
-\nodeconnect{iii}{v}
-}
-}
-
-\subsection*{Mood}
-
-Mood changes when there is a topic, as well as when
-there is WH-movement.  \emph{Irrealis} is the mood when
-there is a non-subject topic or WH-phrase in Comp.
-\emph{Realis} is the mood when there is a subject topic
-or WH-phrase.
+Both expressions equal 1!
 
 \end{document}
