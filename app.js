@@ -31,18 +31,19 @@ MathJax = {
         packages: PACKAGES.replace('\*', PACKAGES).split(/\s*,\s*/)
     }
 }
-
 MathJax.startup
 
 require('mathjax-full/' + ('components/src/startup') + '/startup.js');
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
-app.post('/api/upload', (req, res, next) => {
+app.post('/api/LaTexUpload', (req, res, next) => {
     const form = formidable({ multiples: true });
 
     form.parse(req, (err, fields, files) => {
@@ -82,9 +83,7 @@ app.post('/api/upload', (req, res, next) => {
             ml_start = data.indexOf('>', data.indexOf(SemTag,math_end))+1;
             ml_end = data.indexOf(AnnTag,ml_start);
             ml_struct = data.slice(ml_start, ml_end);
-
             alttext = sre.toSpeech(ml_struct);
-
             data = data.slice(0,math_end) + " " + AltTextAttr + "\"" + alttext + "\""
                  + data.slice(math_end)
             idx = data.indexOf('<math', idx+1);
@@ -96,7 +95,6 @@ app.post('/api/upload', (req, res, next) => {
         fs.writeFileSync(HTMLGlobalPath, formatted, 'utf8', function (err) {
             if (err) return console.log(err);
         });
-
 
         // prince prince1.html --pdf-profile="PDF/UA-1"
         execSync('prince' + HTMLPath + princeOptions + PDFPath, (error, stdout, stderr) => {
@@ -111,10 +109,31 @@ app.post('/api/upload', (req, res, next) => {
             console.log(`stdout: ${stdout}`);
         });
 
-        res.sendFile(__dirname + '/index.html');
-
+        res.sendFile(__dirname + '/public/index.html');
     });
-  
+});
+
+app.post('/api/PDFUpload', (req, res, next) => {
+    const form = formidable({ multiples: true });
+
+    form.parse(req, (err, fields, files) => {
+    if (err) {
+        next(err);
+        return;
+    }
+    });
+
+    // saving the file
+    form.on('fileBegin', function (name, file){
+        file.path = __dirname + '/temp/result.pdf';
+    });
+
+    // upload finishes
+    form.on('end', () => {
+        
+
+        res.sendFile(__dirname + '/public/index.html');
+    });
 });
 
 app.listen(3000, () => {

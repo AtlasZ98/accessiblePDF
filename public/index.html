@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Upload and Convert</title>
+</head>
+<body>
+    <h2>Acessible PDF</h2>
+    <h3>Single LaTeX file to PDF-UA</h3>
+    <div><form action="/api/LaTexUpload" enctype="multipart/form-data" method="post">
+      <div>Text field title: <input type="text" name="title" /></div>
+      <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
+      <input type="submit" value="Upload" />
+    </form></div>
+
+    <!-- <h3>Existing PDF to PDF-UA</h3>
+    <button id="PDF"></button>
+    <div id="PDFForm"></div>
+    <form action="/api/PDFUpload" enctype="multipart/form-data" method="post">
+        <div>Text field title: <input type="text" name="title" /></div>
+        <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
+        <input type="submit" value="Upload" />
+    </form> -->
+    <br><br>
+    <button type="button" id="img_button">Redirect to generate img alt text</button>
+    <script src="index.js"></script>
+</body>
+</html>

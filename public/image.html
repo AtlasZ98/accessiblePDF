@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Image Alt Text</title>
+</head>
+<body>
+    <h2>Acessible PDF</h2>
+    <h3>Submit image files to generate alt texts</h3>
+    <form action="/api/LaTexUpload" enctype="multipart/form-data" method="post">
+      <div>Alternative text for this image: <input type="text" name="title" /></div>
+      <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
+      <input type="submit" value="Upload" />
+    </form>
+</body>
+</html>
