@@ -1,0 +1,31 @@
+First Section 
+First Subsection 
+First Subsubsection 
+• First bullet point has some easy math: y = 2x + 1 
+• Second bullet point has some math: f(x) = x2 + 2x + 1 = (x + 1)2 
+• A third bullet has some harder math: ∑x = 0
+inf
+xn + 1
+5
+ 
+Second Section 
+On a New Page 
+Another Subsubsection 
+1. Enumeration 
+2. More enumeration 
+3. A third time 
+There’s also a whole chunk of math here... 
+lim
+x → inf
+π(x)
+x
+ln (x)
+= − b ±
+3√b2 − 4ac
+2a
+×
+2a
+− b ±
+3√b2 − 4ac
+Both expressions equal 1! 
+

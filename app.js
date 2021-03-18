@@ -2,8 +2,8 @@
 
 const PACKAGES = 'base, autoload, require, ams, newcommand';
 const action = require('./action.js');
-
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const fs = require('fs')
 const formidable = require('formidable');
 const { execSync } = require("child_process");
@@ -43,10 +43,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/api', (req, res) =>{
+    res.json({message:"Hello from NodeJS Server."});
+});
+
 app.post('/api/LaTexUpload', (req, res, next) => {
     const form = formidable({ multiples: true });
 
-    form.parse(req, (err, fields, files) => {
+    form.parse(req, (err) => {
     if (err) {
         next(err);
         return;
@@ -72,24 +76,24 @@ app.post('/api/LaTexUpload', (req, res, next) => {
             console.log(`stdout: ${stdout}`);
         });
 
-        data = fs.readFileSync(HTMLGlobalPath, 'utf8');
+        var data = fs.readFileSync(HTMLGlobalPath, 'utf8');
 
-        idx = data.indexOf('<math');
+        var idx = data.indexOf('<math');
 
-        alttext = "Alternative Text Goes Here"
+        var alttext = "Alternative Text Goes Here"
 
         while (idx > 0) {
-            math_end = data.indexOf('>', idx);
-            ml_start = data.indexOf('>', data.indexOf(SemTag,math_end))+1;
-            ml_end = data.indexOf(AnnTag,ml_start);
-            ml_struct = data.slice(ml_start, ml_end);
+            var math_end = data.indexOf('>', idx);
+            var ml_start = data.indexOf('>', data.indexOf(SemTag,math_end))+1;
+            var ml_end = data.indexOf(AnnTag,ml_start);
+            var ml_struct = data.slice(ml_start, ml_end);
             alttext = sre.toSpeech(ml_struct);
             data = data.slice(0,math_end) + " " + AltTextAttr + "\"" + alttext + "\""
                  + data.slice(math_end)
             idx = data.indexOf('<math', idx+1);
         }
 
-        formatted = '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>\n' 
+        var formatted = '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>\n' 
                   + data + '</body></html>';
 
         fs.writeFileSync(HTMLGlobalPath, formatted, 'utf8', function (err) {
@@ -113,29 +117,27 @@ app.post('/api/LaTexUpload', (req, res, next) => {
     });
 });
 
-app.post('/api/PDFUpload', (req, res, next) => {
-    const form = formidable({ multiples: true });
+// app.post('/api/PDFUpload', (req, res, next) => {
+//     const form = formidable({ multiples: true });
 
-    form.parse(req, (err, fields, files) => {
-    if (err) {
-        next(err);
-        return;
-    }
-    });
+//     form.parse(req, (err, fields, files) => {
+//     if (err) {
+//         next(err);
+//         return;
+//     }
+//     });
 
-    // saving the file
-    form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/temp/result.pdf';
-    });
+//     // saving the file
+//     form.on('fileBegin', function (name, file){
+//         file.path = __dirname + '/temp/result.pdf';
+//     });
 
-    // upload finishes
-    form.on('end', () => {
-        
+//     // upload finishes
+//     form.on('end', () => {
+//         res.sendFile(__dirname + '/public/index.html');
+//     });
+// });
 
-        res.sendFile(__dirname + '/public/index.html');
-    });
-});
-
-app.listen(3000, () => {
-    console.log('Server listening on http://localhost:3000');
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
 });
