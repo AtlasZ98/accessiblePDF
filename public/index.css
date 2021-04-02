@@ -1,0 +1,47 @@
+body {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 16px;
+    color:#63695b;
+    text-decoration: none;
+}
+
+form {
+    color:#63695b;
+}
+
+input {
+    color:#63695b;
+}
+
+ul.navibar {
+    height: 127px;
+	list-style-type: none;
+	overflow: hidden;
+    padding-top: 0.5%;
+}
+
+li.navibar_item a{
+	padding: 12px;
+	background-color: #63695b;
+	color: #f2eae5;
+	text-decoration: none;
+	text-align: center;
+	font-size: 18px;
+}
+
+li.navibar_item {
+	float: left;
+	position: relative;
+	left: 1%;
+}
+
+li.navibar_item a:hover {
+	color: rgb(0, 0, 0)
+}
+
+li.navibar_button {
+    float: right;
+    position: relative;
+    right: 1%;
+    margin-bottom: 5px;
+}

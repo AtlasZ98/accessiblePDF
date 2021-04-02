@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang='en'>
+<script src="index.js"></script>
 <head>
-    <title>Upload and Convert</title>
+    <title>File Conversion</title>
+    <link id="style" type="text/css" rel="stylesheet" href="index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 </head>
 <body>
-    <h2>Acessible PDF</h2>
-    <h3>Single LaTeX file to PDF-UA</h3>
-    <div><form action="/api/LaTexUpload" enctype="multipart/form-data" method="post">
-      <div>Text field title: <input type="text" name="title" /></div>
-      <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
-      <input type="submit" value="Upload" />
-    </form></div>
+    <ul class="navibar">
+        <li class="navibar_item"> <a href="index.html">File Conversion</a> </li>
+        <li class="navibar_item"> <a href="about.html">About Us</a> </li>
+        <li class="navibar_item"> <a href="contact.html">Contact Us</a> </li>
+        <li class="navibar_item"> <a href="p&t.html">Privacy & Terms</a> </li>
+    </ul>
 
-    <!-- <h3>Existing PDF to PDF-UA</h3>
-    <button id="PDF"></button>
-    <div id="PDFForm"></div>
-    <form action="/api/PDFUpload" enctype="multipart/form-data" method="post">
-        <div>Text field title: <input type="text" name="title" /></div>
-        <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
-        <input type="submit" value="Upload" />
-    </form> -->
-    <br><br>
-    <button type="button" id="img_button">Redirect to generate img alt text</button>
-    <script src="index.js"></script>
+    <h2>File Conversion</h2>
+    <p>Please upload the LaTex files you would like to convert to accessible PDFs</p>
+
+    <div><form 
+        action="/api/LaTexUpload" 
+        enctype="multipart/form-data" 
+        method="post">
+            <div><input type="file" name="someExpressFiles" multiple="multiple" /></div>
+            <div><input type="reset" value="Cancel"></div>
+            <div><input type="submit" value="Convert"/></div>
+    </form></div>
 </body>
 </html>

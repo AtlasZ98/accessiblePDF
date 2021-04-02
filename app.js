@@ -8,12 +8,15 @@ const fs = require('fs')
 const formidable = require('formidable');
 const { execSync } = require("child_process");
 
+// configg conversion tools
 const pandocOptions = ' --mathml -o ';
 const princeOptions = ' --pdf-profile=\"PDF/UA-1\" -o ';
 const LaTexPath = ' ./temp/result.tex ';
 const HTMLPath = ' ./temp/result.html ';
 const HTMLGlobalPath = __dirname + '/temp/result.html';
 const PDFPath = ' ./temp/result.pdf ';
+
+// config MathJax
 const AltTextAttr = "alttext="
 const SemTag = "<semantics>"
 const AnnTag = "<annotation"
