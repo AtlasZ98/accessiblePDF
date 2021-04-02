@@ -80,11 +80,9 @@ app.post('/api/LaTexUpload', (req, res, next) => {
         });
 
         var data = fs.readFileSync(HTMLGlobalPath, 'utf8');
-
-        var idx = data.indexOf('<math');
-
+        // adding MathJax to HTML
         var alttext = "Alternative Text Goes Here"
-
+        var idx = data.indexOf('<math');
         while (idx > 0) {
             var math_end = data.indexOf('>', idx);
             var ml_start = data.indexOf('>', data.indexOf(SemTag,math_end))+1;
@@ -95,11 +93,12 @@ app.post('/api/LaTexUpload', (req, res, next) => {
                  + data.slice(math_end)
             idx = data.indexOf('<math', idx+1);
         }
-
-        var formatted = '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>\n' 
-                  + data + '</body></html>';
-
-        fs.writeFileSync(HTMLGlobalPath, formatted, 'utf8', function (err) {
+        var dataWithMath = 
+            '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>\n' 
+            + data 
+            + '</body></html>';
+        // finish adding MathJax to HTML
+        fs.writeFileSync(HTMLGlobalPath, dataWithMath, 'utf8', function (err) {
             if (err) return console.log(err);
         });
 
@@ -119,27 +118,6 @@ app.post('/api/LaTexUpload', (req, res, next) => {
         res.sendFile(__dirname + '/public/index.html');
     });
 });
-
-// app.post('/api/PDFUpload', (req, res, next) => {
-//     const form = formidable({ multiples: true });
-
-//     form.parse(req, (err, fields, files) => {
-//     if (err) {
-//         next(err);
-//         return;
-//     }
-//     });
-
-//     // saving the file
-//     form.on('fileBegin', function (name, file){
-//         file.path = __dirname + '/temp/result.pdf';
-//     });
-
-//     // upload finishes
-//     form.on('end', () => {
-//         res.sendFile(__dirname + '/public/index.html');
-//     });
-// });
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
