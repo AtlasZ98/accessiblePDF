@@ -14,7 +14,7 @@ const princeOptions = ' --pdf-profile=\"PDF/UA-1\" -o ';
 const LaTexPath = ' ./temp/result.tex ';
 const HTMLPath = ' ./temp/result.html ';
 const HTMLGlobalPath = __dirname + '/temp/result.html';
-const PDFPath = ' ./temp/result.pdf ';
+const PDFPath = __dirname + '/temp/result.pdf';
 
 // config MathJax
 const AltTextAttr = "alttext="
@@ -94,7 +94,7 @@ app.post('/api/LaTexUpload', (req, res, next) => {
             idx = data.indexOf('<math', idx+1);
         }
         var dataWithMath = 
-            '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body>\n' 
+            '<!DOCTYPE html><html lang=\'en\'><head><title>Converted-PDF</title></head><body><h1></h1><h2></h2><h3></h3>\n' 
             + data 
             + '</body></html>';
         // finish adding MathJax to HTML
@@ -115,7 +115,7 @@ app.post('/api/LaTexUpload', (req, res, next) => {
             console.log(`stdout: ${stdout}`);
         });
 
-        res.sendFile(__dirname + '/public/index.html');
+        res.download(PDFPath);
     });
 });
 
