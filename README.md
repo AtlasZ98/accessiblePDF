@@ -1,4 +1,27 @@
 # Accessible PDF Maker
+
+## How to Run this project on Ubuntu Server (21)
+# get prince
+sudo apt-get update
+sudo apt-get install build-essential procps curl file git
+
+wget https://www.princexml.com/download/prince_14.1-1_ubuntu20.04_amd64.deb
+sudo gdebi $PIC # where $PIC is the path to the downloaded deb
+
+# get pandoc 
+wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb
+sudo dpkg -i $DEB  # where $DEB is the path to the downloaded deb
+
+# get npm
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# get the project
+git clone https://github.com/AtlasZ98/accessiblePDF.git
+cd accessiblePDF
+npm start
+
+
 ## Weekly Status
 ### Week of 09/26/2020 - 10/02/2020
 **Things Done:**
