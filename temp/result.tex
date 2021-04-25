@@ -1,8 +1,3 @@
-\documentclass[12pt]{article}
-\pagestyle{empty}
-\thispagestyle{empty}
-\usepackage{amssymb}
-\usepackage{amsmath}
 \usepackage{fullpage}
 \usepackage{enumerate}
 \usepackage[mathscr]{euscript}
@@ -39,64 +34,89 @@
 \begin{document}
 
 \doheading{2}{title}{Spring 2021}
-\htitle{HW 2: due Thursday, February 25 at 9pm}
+\htitle{HW 6: due Thursday, April 15 at 9pm  }
 
 \medskip
 \subsubsection*{Problem 1}
 
-%For any string $w = w_1\ldots w_n$, the {\em reverse of $w$,\/} written $w_{R}$, is the string in reverse order, $w_n \ldots w_2w_1$. For any language $A$, let $A^{R} = \{ w_{R} \
-%| w \in A \}$. Show that if $A$ is regular, so is $A^{R}$.
-a) Prove that the following language on binary strings is regular:
-$$   D =  \{    \mbox{ All binary strings that either start with two 0's or end with three 1's (but not both)  }\}                                      $$
-\smallskip
-b) Prove that the following language over the English 26 letter alphabet  is regular: 
-$$ R = \{ w \mid w \mbox{ contains an even number of occurrences of the  substring "go" }$$ 
-$$ \mbox{ and the last go is part of the   substring "gone" } \} $$
+Consider the following functions
+
+\begin{itemize}
+\item $a(n) = 3n^2 + 7$
+\item $b(n) = 7 n \log n$
+\item $c(n) = 3^n$
+\item $d(n) =  2 \sqrt{n} + 400,000$
+\item $e(n) = 10 n^2 - 40$
+\item $f(n) = \log \log n$
+\item $g(n) =  2 n^{2/3}\log^2 n$
+\item $h(n) = 2^{\sqrt{n}}$
+\item $i(n) = n!$
+\item $j(n) = e^n * n^{23}$
+\item $k(n) = 2^{2^n}$
+\item $l(n) = n^{\log n}$
+\end{itemize}
+
+\begin{enumerate}
+
+\item Order these functions from left to right so that $a \leq b$ means $O(a(n))
+ \leq O(b(n))$. For example, you might  write
+
+\[ a \leq b \leq c \leq d \leq e \leq f \leq g \leq h \leq i \leq j \leq k \leq
+l \]
+
+but of course that's not the right answer. What is?
+
+\item A function is called {\em super-polynomial\/} if it is not $O(n^k)$ for some constant $k$. Which of the functions listed above are {\em super-polynomial}?
+
+
+\item A function is called {\em sub-exponential\/} if it runs in time
+$2^{o(n)}$.  Which of the functions would you
+describe as {\em sub-exponential?\/}
+
+\end{enumerate} 
+
 
 \newpage
 
 \subsubsection*{Problem 2}
 
-Do these two regular expressions represent the same language?
+Let $S= \{ x_1, \ldots x_n \}$ be a set of $n$ distinct positive integers, and let $t$ also be a positive integer.  Define
+\[ \mbox{SUBSET-SUM}  = \{ (S,t) \mid \mbox{ some subset of $S$ sums to exactly
+$t$}  \} \]
+Show that SUBSET-SUM is in NP.
 
-$$ aa(a \cup b)^* \cup (bb)^*a \mbox{ and } (ab \cup ba \cup a)^* $$
+
+
+\newpage
+
+\subsection*{Problem 3}
+
+
+Suppose we had a Turing Machine $X$ that could decide SUBSET-SUM (from Problem 2) in polynomial time. Explain how to use $X$ to construct a new polynomial time Turing Machine that not only says YES/NO when given an instance $(S,t)$, but also, when the answer is YES, explicitly returns a subset of $S$ that sums to $t$.
+
+
+
+\newpage
+
+\subsection*{Problem 4}
+
+
+A 2-vertex coloring is a function that assigns the colors {\em blue\/} and {\em
+red\/} to vertices of a graph. A 2-vertex coloring is called {\em proper\/} if n
+o two vertices that are connected by an edge receive the same color.
+Let
+\[ \mbox{2COLOR } = \{ G \mid G \mbox{ has a proper 2-vertex coloring} \} \]
+
+Show 2COLOR is in NP.
+
+
 
 \newpage
 
 
-\subsubsection*{Problem 3}
+\subsection*{Problem 5}
 
-Prove that the following language is not regular:
-$ \{a^mb^nc^pd^q: m+n = p+q \}$
-
-\newpage
-
-\subsubsection*{Problem 4}
-
-Is the language of Problem 3 context free?
-
-\newpage
-
-\subsubsection*{Problem 5}
-
-For any string $w = w_1\ldots w_n$, the {\em reverse of $w$,\/} written $w_{R}$, is the string in reverse order, $w_n \ldots w_2w_1$. For any language $A$, let $A^{R} = \{ w_{R} \
-| w \in A \}$. Show if $A$ is regular, so is $A^{R}$.
+Show 2COLOR (from Problem 4) is in P. 
 
 
-%Prove or disprove:
-%\begin{enumerate}
-%\item the context free languages are closed under union
-%\item the context free languages are closed under intersection
-%\item the context free languages are closed under complement
-%\end{enumerate}
-
-
-
-
-%\end{enumerate}
-
-
-
-\end{document}
-
-
+\end{document} 

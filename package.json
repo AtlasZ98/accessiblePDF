@@ -4,6 +4,7 @@
   "description": "**Things Done:** - Had the first meeting with the sponsor.   - Obtained some info about current process to make accessible PDF :     - https://chi2021.acm.org/for-authors/presenting/papers/guide-to-an-accessible-submission     - https://assets19.sigaccess.org/creating_accessible_pdfs.html     - https://webaim.org/techniques/acrobat/converting     - https://github.com/petergramaglia/access_sigchi   - Expected priority of development:     1. Less manual work on generating accessible PDFs     2. Avoid Adobe Acrobat Pro to reduce accessibility cost for users     3. Batch processing capability - Some research about PDF format:   - https://web.archive.org/web/20141010035745/http://gnupdf.org/Introduction_to_PDF#General_structure - Engineering Diagram",
   "main": "app.js",
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "express": "^4.17.1",
     "formidable": "^1.2.2",
     "fs": "0.0.1-security",

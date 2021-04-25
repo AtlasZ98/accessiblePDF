@@ -3,18 +3,24 @@
 const PACKAGES = 'base, autoload, require, ams, newcommand';
 const action = require('./action.js');
 const express = require('express');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const fs = require('fs')
 const formidable = require('formidable');
 const { execSync } = require("child_process");
 
-// configg conversion tools
+// config conversion tools
 const pandocOptions = ' --mathml -o ';
 const princeOptions = ' --pdf-profile=\"PDF/UA-1\" -o ';
-const LaTexPath = ' ./temp/result.tex ';
-const HTMLPath = ' ./temp/result.html ';
-const HTMLGlobalPath = __dirname + '/temp/result.html';
-const PDFPath = __dirname + '/temp/result.pdf';
+
+// config random filename generator
+const FILENAME_LENGTH = 21;
+const Crypto = require('crypto');
+function randomString(size = FILENAME_LENGTH) {  
+  return Crypto
+    .randomBytes(size)
+    .toString('base64')
+    .slice(0, size)
+}
 
 // config MathJax
 const AltTextAttr = "alttext="
@@ -51,7 +57,8 @@ app.get('/api', (req, res) =>{
 });
 
 app.post('/api/LaTexUpload', (req, res, next) => {
-    const form = formidable({ multiples: true });
+    const form = formidable();
+    var filename = randomString();
 
     form.parse(req, (err) => {
     if (err) {
@@ -62,11 +69,13 @@ app.post('/api/LaTexUpload', (req, res, next) => {
 
     // saving the file
     form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/temp/result.tex';
+        file.path = __dirname + '/temp/' + filename + '.tex';
     });
 
     // upload finishes
     form.on('end', () => {
+        const LaTexPath = ' ./temp/' + filename + '.tex ';
+        const HTMLPath = ' ./temp/' + filename + '.html ';
         execSync('pandoc' + LaTexPath + pandocOptions + HTMLPath, (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
@@ -79,6 +88,7 @@ app.post('/api/LaTexUpload', (req, res, next) => {
             console.log(`stdout: ${stdout}`);
         });
 
+        const HTMLGlobalPath = __dirname + '/temp/' + filename + '.html';
         var data = fs.readFileSync(HTMLGlobalPath, 'utf8');
         // adding MathJax to HTML
         var alttext = "Alternative Text Goes Here"
@@ -103,6 +113,7 @@ app.post('/api/LaTexUpload', (req, res, next) => {
         });
 
         // prince prince1.html --pdf-profile="PDF/UA-1"
+        const PDFPath = __dirname + '/temp/' + filename + '.pdf';
         execSync('prince' + HTMLPath + princeOptions + PDFPath, (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
@@ -115,9 +126,26 @@ app.post('/api/LaTexUpload', (req, res, next) => {
             console.log(`stdout: ${stdout}`);
         });
 
-        res.download(PDFPath);
+        res.download(PDFPath, 'result.pdf');
+
+        // cleanup
+        res.on('finish', function() {  
+            removeFile(filename + '.tex');
+            removeFile(filename + '.html');
+            removeFile(filename + '.pdf');
+        });
     });
 });
+
+function removeFile(path) {
+    path = './temp/' + path;
+    fs.unlink(path, (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+    });
+}
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

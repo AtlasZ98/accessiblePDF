@@ -18,7 +18,6 @@ function removeSemanticData(math) {
   });
 }
 
-
 const sreDefault = {
     domain: 'clearspeak',
     style: 'default'
